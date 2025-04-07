@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .youtube-btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        
+        .youtube-btn:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .youtube-icon {
+            margin-right: 70px;
+            font-size: 20px;
+        }
+        
+        .check-subscription {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .check-subscription:hover {
+            background-color: #45a049;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .success-message {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <img src="https://www.youtube.com/s/desktop/d743f786/img/favicon_144x144.png" alt="YouTube" class="logo">
+        <h1>Welcome to Our App!</h1>
+        <p>To access our exclusive content, please first subscribe to our YouTube channel. This helps support our work and lets us create more amazing content for you!</p>
+        
+        <a href="https://www.youtube.com/@Alfahadmimi" target="_blank" class="youtube-btn">
+            <span class="youtube-icon">▶</span> Subscribe Now
+        </a>
+        
+        <p>After subscribing, click the button below to verify and proceed.</p>
+        
+        <button id="verify-btn" class="check-subscription">I've Subscribed - Continue</button>
+        
+        <div id="success-message" class="success-message hidden">
+            Thank you for subscribing! Redirecting you now...
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('verify-btn').addEventListener('click', function() {
+            // In a real app, you might verify subscription via YouTube API
+            // For this demo, we'll assume the user has subscribed
+            
+            // Show success message
+            document.getElementById('success-message').classList.remove('hidden');
+            
+            // Redirect after 3 seconds
+            setTimeout(function() {
+                window.location.href = "https://www.temu.com";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
